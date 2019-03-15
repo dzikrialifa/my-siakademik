@@ -1,6 +1,6 @@
 <body class="bg-gradient-primary">
 
-    <div class="container">
+    <div class="container mt-5">
 
         <!-- Outer Row -->
         <div class="row justify-content-center">
@@ -14,11 +14,11 @@
                             <div class="col-lg">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h1 class="h4 text-gray-900 mb-4">Login Siswa</h1>
+                                        <h1 class="h2 text-gray-900 mb-4"><i class="fas fa-user-graduate"></i> Login Siswa</h1>
                                     </div>
                                     <form class="user">
                                         <div class="form-group">
-                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Enter Email Address...">
+                                            <input type="email" class="form-control form-control-user" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Username">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user" id="exampleInputPassword" placeholder="Password">
@@ -29,7 +29,7 @@
                                                 <label class="custom-control-label" for="customCheck">Remember Me</label>
                                             </div>
                                         </div>
-                                        <a href="index.html" class="btn btn-primary btn-user btn-block">
+                                        <a href="<?= base_url('admin/index') ?>" class="btn btn-success btn-user btn-block">
                                             Login
                                         </a>
                                     </form>
