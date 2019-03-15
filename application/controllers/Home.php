@@ -7,10 +7,7 @@ class Home extends CI_Controller
     {
         $data['judul']  = 'Welcome Home Admin';
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('templates/sidebar');
-        $this->load->view('home/index');
-        $this->load->view('templates/footer');
+        $this->load->view('home/index', $data);
     }
 
     public function login()
