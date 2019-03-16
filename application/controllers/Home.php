@@ -14,8 +14,8 @@ class Home extends CI_Controller
     {
         $data['judul']  = 'Login Please';
 
-        $this->load->view('templates/header', $data);
-        $this->load->view('home/login');
-        $this->load->view('templates/footer');
+        $this->load->view('login/header', $data);
+        $this->load->view('login/index');
+        $this->load->view('login/footer');
     }
 }
