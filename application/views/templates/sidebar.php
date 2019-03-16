@@ -45,9 +45,24 @@
 
             <!-- Heading -->
             <div class="sidebar-heading">
-                Syncronized
+                MENU EDIT SISWA
             </div>
 
+            <!-- Nav Item - Pages Collapse Menu -->
+            <li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseEdit" aria-expanded="true" aria-controls="collapseEdit">
+                    <i class="fas fa-fw fa-pen"></i>
+                    <span>Edit Data</span>
+                </a>
+                <div id="collapseEdit" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <a class="collapse-item" href="<?= base_url('admin/tambah_guru'); ?>"><i class="fas fa-chalkboard-teacher"></i> Data Guru</a>
+                        <a class="collapse-item" href="<?= base_url('admin/tambah_guru'); ?>"><i class="fas fa-user-graduate"></i> Siswa Kelas 10</a>
+                        <a class="collapse-item" href="<?= base_url('admin/tambah_siswa'); ?>"><i class="fas fa-user-graduate"></i> Siswa Kelas 11</a>
+                        <a class="collapse-item" href="<?= base_url('admin/tambah_siswa'); ?>"><i class="fas fa-user-graduate"></i> Siswa Kelas 12</a>
+                    </div>
+                </div>
+            </li>
             <!-- Upload Pengumuman -->
             <li class="nav-item">
                 <a class="nav-link" href="tables.html">
