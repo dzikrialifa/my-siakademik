@@ -22,22 +22,17 @@
             <hr class="sidebar-divider">
 
             <!-- Heading -->
+
+            <!-- Heading -->
             <div class="sidebar-heading">
-                Menu Tambah Data
+                INFO BIODATA GURU
             </div>
 
-            <!-- Nav Item - Pages Collapse Menu -->
+            <!-- Logout -->
             <li class="nav-item">
-                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-                    <i class="fas fa-fw fa-user-plus"></i>
-                    <span>Tambah Data</span>
-                </a>
-                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
-                    <div class="bg-white py-2 collapse-inner rounded">
-                        <a class="collapse-item" href="<?= base_url('admin/tambah_guru'); ?>"><i class="fas fa-chalkboard-teacher"></i> Tambah Guru</a>
-                        <a class="collapse-item" href="<?= base_url('admin/tambah_siswa'); ?>"><i class="fas fa-user-graduate"></i> Tambah Siswa</a>
-                    </div>
-                </div>
+                <a class="nav-link" href="">
+                    <i class="fas fa-fw fa-list-ul"></i>
+                    <span>List Biodata Guru</span></a>
             </li>
 
 
