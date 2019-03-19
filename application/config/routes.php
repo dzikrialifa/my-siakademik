@@ -53,7 +53,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 // YANG DIPANGGIL ITU > NAMACONTROLLER/NAMAMETHOD
 $route['default_controller'] = 'home';
-$route['login'] = 'home/login';
+$route['login'] = 'auth/index';
+$route['register'] = 'auth/register';
+
 
 $route['home'] = 'home/index';
 $route['admin'] = 'admin/index';
