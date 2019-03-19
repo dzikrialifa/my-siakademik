@@ -21,4 +21,14 @@ class Admin extends CI_Controller
         $this->load->view('admin/form_nilai_siswa');
         $this->load->view('templates/footer');
     }
+
+    public function add_admin()
+    {
+        $data['judul']  =   'Tambah Data Admin';
+        $this->load->view('templates/header', $data);
+        $this->load->view('templates/sidebar');
+        $this->load->view('admin/index');
+        $this->load->view('admin/tambah_admin');
+        $this->load->view('templates/footer');
+    }
 }
