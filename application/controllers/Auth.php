@@ -26,6 +26,19 @@ class Auth extends CI_Controller
         }
     }
 
+    private function _login()
+    {
+        $username   =   $this->input->post('username');
+        $password   =   $this->input->post('password');
+
+        $user       =   $this->db->get_where(
+            'admin',
+            ['username' => $username]
+        )->row_array();
+        var_dump($user);
+        die;
+    }
+
     public function register()
     {
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
