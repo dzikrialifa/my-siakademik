@@ -15,6 +15,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'trim|required');
 
         if ($this->form_validation->run() == false) {
+
             $data['judul']  = 'Login Page';
 
             $this->load->view('auth/header', $data);
@@ -22,7 +23,7 @@ class Auth extends CI_Controller
             $this->load->view('auth/footer');
         } else {
             // validasi sukses
-            $this->login();
+            $this->_login();
         }
     }
 
@@ -35,8 +36,24 @@ class Auth extends CI_Controller
             'admin',
             ['username' => $username]
         )->row_array();
-        var_dump($user);
-        die;
+
+        if ($user) {
+
+            if (password_verify($password, $user['password'])) {
+                $data   =   [
+                    'username' => $user['email'],
+                    'status' => $user['status']
+                ];
+                $this->session->set_userdata($data);
+                redirect('user');
+            } else { }
+        } else {
+            // USERNAME TIDAK ADA
+            $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Username tidak ada.
+            </div>');
+            redirect('login');
+        }
     }
 
     public function register()
@@ -72,5 +89,15 @@ class Auth extends CI_Controller
             </div>');
             redirect('login');
         }
+    }
+
+    public function logout()
+    {
+        $this->session->unset_userdata('username');
+        $this->session->unset_userdata('status');
+        $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">
+            Berhasil logout.
+            </div>');
+        redirect('login');
     }
 }

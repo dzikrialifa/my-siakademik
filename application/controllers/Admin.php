@@ -5,6 +5,7 @@ class Admin extends CI_Controller
 
     public function index(Type $var = null)
     {
+        $data['admin']  =   $this->db->get_where('admin', ['username' => $this->session->userdata('username')])->row_array();
 
         $data['judul']  =   'Welcome To Administrator';
         $this->load->view('templates/header', $data);
