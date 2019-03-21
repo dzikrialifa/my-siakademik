@@ -38,24 +38,28 @@ class Auth extends CI_Controller
         )->row_array();
 
         if ($user) {
-
             if (password_verify($password, $user['password'])) {
+
                 $data   =   [
-                    'username' => $user['email'],
+                    'username' => $user['username'],
                     'status' => $user['status']
                 ];
                 $this->session->set_userdata($data);
                 redirect('user');
-            } else { }
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
+            Password salah !
+            </div>');
+                redirect('login');
+            }
         } else {
             // USERNAME TIDAK ADA
             $this->session->set_flashdata('message', '<div class="alert alert-danger" role="alert">
-            Username tidak ada.
+            Username Tidak Ada !
             </div>');
             redirect('login');
         }
     }
-
     public function register()
     {
         $this->form_validation->set_rules('username', 'Username', 'required|trim');
@@ -92,6 +96,7 @@ class Auth extends CI_Controller
     }
 
     public function logout()
+    // LOGOUT
     {
         $this->session->unset_userdata('username');
         $this->session->unset_userdata('status');
